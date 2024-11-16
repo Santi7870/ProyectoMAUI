@@ -1,0 +1,46 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.CartPage"
+             Title="Carrito de Compras">
+
+    <ScrollView Padding="10">
+        <VerticalStackLayout Spacing="15">
+
+            <!-- Título del Carrito -->
+            <Label Text="Carrito de Compras" FontSize="24" TextColor="Black" HorizontalTextAlignment="Center" />
+
+            <!-- Listado de Productos en el Carrito -->
+            <CollectionView x:Name="CartItemsCollectionView" ItemsSource="{Binding CartItems}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" Padding="10" Margin="5">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="20" TextColor="Black" />
+                                <Label Text="{Binding Size}" FontSize="18" TextColor="Gray" />
+                                <Label Text="{Binding Color}" FontSize="18" TextColor="Gray" />
+
+                                <!-- Botón Eliminar Producto -->
+                                <Button Text="Eliminar" 
+                                        BackgroundColor="Red" 
+                                        TextColor="White" 
+                                        Clicked="OnRemoveClicked" 
+                                        CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Total del Carrito -->
+            <Label Text="Total: $" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center" />
+
+            <!-- Botón Finalizar Compra -->
+            <Button Text="Finalizar Compra" BackgroundColor="Green" TextColor="White" />
+
+            <!-- Botón Regresar -->
+            <Button Text="Regresar" Clicked="OnGoBackClicked" BackgroundColor="Gray" TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+

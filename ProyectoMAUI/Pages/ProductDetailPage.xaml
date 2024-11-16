@@ -1,64 +1,72 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoMAUI.Pages.ProductDetailPage"
              Title="Detalles del Producto"
              BackgroundColor="Black">
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
 
-            <!-- Nombre del Producto -->
-            <Label Text="{Binding Name}" 
-                   FontSize="24" 
-                   FontAttributes="Bold" 
-                   TextColor="White" 
-                   HorizontalTextAlignment="Center" />
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="25">
 
             <!-- Imagen del Producto -->
-            <Image Source="{Binding ImageSource}" 
-                   HeightRequest="300" 
-                   WidthRequest="300" 
-                   Aspect="AspectFill" 
-                   HorizontalOptions="Center" />
+            <Image x:Name="ProductImage" Aspect="AspectFit" HeightRequest="250" HorizontalOptions="Center" />
+
+            <!-- Nombre del Producto -->
+            <Label x:Name="ProductNameLabel" FontSize="24" TextColor="Gray" HorizontalTextAlignment="Center" FontAttributes="Bold" />
 
             <!-- Descripción del Producto -->
-            <Label Text="{Binding Description}" 
-                   FontSize="16" 
-                   TextColor="White" 
-                   HorizontalTextAlignment="Center" />
+            <Label x:Name="ProductDescriptionLabel" FontSize="16" TextColor="Gray" HorizontalTextAlignment="Center" Padding="10" />
+
+            <!-- Precio del Producto -->
+            <Label x:Name="ProductPriceLabel" FontSize="22" TextColor="Green" HorizontalTextAlignment="Center" FontAttributes="Bold" />
 
             <!-- Selección de Talla -->
-            <Label Text="Talla:" TextColor="White" FontSize="18" />
-            <Picker Title="Seleccionar talla" 
-                    ItemsSource="{Binding AvailableSizes}" 
-                    SelectedItem="{Binding SelectedSize}" />
+            <StackLayout>
+                <Label Text="Talla:" FontSize="18" TextColor="White"/>
+                <Picker x:Name="SizePicker" Title="Selecciona una talla" HeightRequest="50" TextColor="White" BackgroundColor="Gray" SelectedIndexChanged="OnSizeSelected">
+                    <Picker.Items>
+                        <x:String>S</x:String>
+                        <x:String>M</x:String>
+                        <x:String>L</x:String>
+                        <x:String>XL</x:String>
+                    </Picker.Items>
+                </Picker>
+                <!-- Mostrar la talla seleccionada -->
+                <Label x:Name="SelectedSizeLabel" TextColor="White" FontSize="18" HorizontalTextAlignment="Center"/>
+            </StackLayout>
 
             <!-- Selección de Color -->
-            <Label Text="Color:" TextColor="White" FontSize="18" />
-            <Picker Title="Seleccionar color" 
-                    ItemsSource="{Binding AvailableColors}" 
-                    SelectedItem="{Binding SelectedColor}" />
+            <StackLayout>
+                <Label Text="Color:" FontSize="18" TextColor="White"/>
+                <Picker x:Name="ColorPicker" Title="Selecciona un color" HeightRequest="50" TextColor="White" BackgroundColor="Gray" SelectedIndexChanged="OnColorSelected">
+                    <Picker.Items>
+                        <x:String>Rojo</x:String>
+                        <x:String>Azul</x:String>
+                        <x:String>Negro</x:String>
+                        <x:String>Blanco</x:String>
+                    </Picker.Items>
+                </Picker>
+                <!-- Mostrar el color seleccionado -->
+                <Label x:Name="SelectedColorLabel" TextColor="White" FontSize="18" HorizontalTextAlignment="Center"/>
+            </StackLayout>
 
-            <!-- Botones -->
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                <!-- Botón Comprar -->
-                <Button Text="Comprar" 
-                        BackgroundColor="Red" 
-                        TextColor="White" 
-                        Clicked="OnBuyClicked" />
+            <!-- Botones de Acción -->
+            <StackLayout Spacing="15" HorizontalOptions="Center">
+                <Button Text="Agregar al carrito" Clicked="OnAddToCartClicked" BackgroundColor="Green" TextColor="White" 
+                        CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />
 
-                <!-- Botón Agregar al Carrito -->
-                <Button Text="Agregar al Carrito" 
-                        BackgroundColor="Blue" 
-                        TextColor="White" 
-                        Clicked="OnAddToCartClicked" />
+                <Button Text="Ir al carrito" Clicked="OnGoToCartClicked" BackgroundColor="Orange" TextColor="White" 
+                        CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />
 
-                <!-- Botón Regresar -->
-                <Button Text="Regresar" 
-                        BackgroundColor="Gray" 
-                        TextColor="White" 
-                        Clicked="OnBackClicked" />
-            </HorizontalStackLayout>
+                <Button Text="Comprar" Clicked="OnBuyClicked" BackgroundColor="Blue" TextColor="White" 
+                        CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />
+
+                <Button Text="Regresar" Clicked="OnGoBackClicked" BackgroundColor="Gray" TextColor="White" 
+                        CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />
+            </StackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
+
+
+

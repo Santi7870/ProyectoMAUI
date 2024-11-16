@@ -1,6 +1,7 @@
 using Microsoft.Maui.Controls;
 using ProyectoMAUI.Models;
 using ProyectoMAUI.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace ProyectoMAUI.Pages
 {
@@ -22,14 +23,13 @@ namespace ProyectoMAUI.Pages
             // Implementa lógica adicional aquí, si es necesario.
         }
 
-        private async void OnProductBuyClicked(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-            var product = button?.BindingContext as Product;
+        private ObservableCollection<CartItem> _cartItems = new ObservableCollection<CartItem>();
 
-            if (product != null)
+        private void OnProductBuyClicked(object sender, EventArgs e)
+        {
+            if (sender is Button button && button.BindingContext is Product product)
             {
-                await Navigation.PushAsync(new ProductDetailPage(product));
+                Navigation.PushAsync(new ProductDetailPage(product, _cartItems));
             }
         }
 
