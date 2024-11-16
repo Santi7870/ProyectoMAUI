@@ -1,29 +1,44 @@
-using Microsoft.Maui.Controls;
+using ProyectoMAUI.Models;
 using ProyectoMAUI.Services;
+using Microsoft.Maui.Controls;
 
 namespace ProyectoMAUI.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        private readonly DatabaseService _databaseService = new();
-
         public LoginPage()
         {
             InitializeComponent();
         }
 
-        private async void OnLoginButtonClicked(object sender, EventArgs e)
+        private async void OnLoginClicked(object sender, EventArgs e)
         {
-            var usuario = await _databaseService.IniciarSesionAsync(CorreoEntry.Text, ClaveEntry.Text);
+            // Verifica si los controles de entrada están correctamente configurados
+            var username = UsernameEntry.Text;
+            var password = PasswordEntry.Text;
 
-            if (usuario != null)
+            // Validar usuario
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                await DisplayAlert("Bienvenido", $"Hola, {usuario.Nombre}", "OK");
+                await DisplayAlert("Error", "Por favor ingrese todos los campos.", "OK");
+                return;
+            }
+
+            // Buscar usuario en la base de datos
+            var user = await App.Database.GetUserAsync(username);
+
+            if (user != null && user.Clave == password)
+            {
+                // Iniciar sesión exitoso, navegar al catálogo
+                await Navigation.PushAsync(new CatalogPage());
             }
             else
             {
-                await DisplayAlert("Error", "Correo o clave incorrectos", "OK");
+                // Mostrar error si no se encuentra el usuario
+                await DisplayAlert("Error", "Credenciales incorrectas", "OK");
             }
         }
     }
 }
+
+

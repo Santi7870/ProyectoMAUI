@@ -1,30 +1,33 @@
 ﻿using SQLite;
-using ProyectoMAUI.Models;
-using System.IO;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProyectoMAUI.Models;
 
 namespace ProyectoMAUI.Services
 {
     public class DatabaseService
     {
-        private readonly SQLiteAsyncConnection _database;
+        readonly SQLiteAsyncConnection _database;
 
-        public DatabaseService()
+        public DatabaseService(string dbPath)
         {
-            var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "usuarios.db3");
-            _database = new SQLiteAsyncConnection(databasePath);
-            _database.CreateTableAsync<Usuario>().Wait();
+            _database = new SQLiteAsyncConnection(dbPath);
+            _database.CreateTableAsync<Usuario>().Wait();  // Asegúrate de que la tabla 'Usuario' esté creada
         }
 
-        public Task<int> RegistrarUsuarioAsync(Usuario usuario)
+        // Aquí van tus métodos para interactuar con la base de datos, como GetUserAsync
+        public async Task<Usuario> GetUserAsync(string correo)
         {
-            return _database.InsertAsync(usuario);
+            return await _database.Table<Usuario>().FirstOrDefaultAsync(u => u.Correo == correo);
         }
 
-        public Task<Usuario> IniciarSesionAsync(string correo, string clave)
+        public async Task<int> AddUserAsync(Usuario user)
         {
-            return _database.Table<Usuario>().FirstOrDefaultAsync(u => u.Correo == correo && u.Clave == clave);
+            return await _database.InsertAsync(user);
         }
     }
 }
+
+
 
