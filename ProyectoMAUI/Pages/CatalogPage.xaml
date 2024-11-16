@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ProyectoMAUI.Models" 
-    x:Class="ProyectoMAUI.Pages.CatalogPage"
+             xmlns:local="clr-namespace:ProyectoMAUI.Models"
+             x:Class="ProyectoMAUI.Pages.CatalogPage"
              Title="Catálogo"
              BackgroundColor="Black">
 
@@ -13,7 +13,7 @@
             <Label Text="Hoodies" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
             <!-- Carousel para Hoodies -->
-            <CarouselView Loop="True" HeightRequest="300" ItemTemplate="{StaticResource ProductTemplate}">
+            <CarouselView Loop="True" HeightRequest="350" ItemTemplate="{StaticResource ProductTemplate}">
                 <CarouselView.ItemsSource>
                     <x:Array Type="{x:Type local:Product}">
                         <local:Product Name="Hoodie de Algodón" ImageSource="hoodie1.jpg" />
@@ -30,7 +30,7 @@
             <Label Text="Zapatos" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
             <!-- Carousel para Zapatos -->
-            <CarouselView Loop="True" HeightRequest="300" ItemTemplate="{StaticResource ProductTemplate}">
+            <CarouselView Loop="True" HeightRequest="350" ItemTemplate="{StaticResource ProductTemplate}">
                 <CarouselView.ItemsSource>
                     <x:Array Type="{x:Type local:Product}">
                         <local:Product Name="Zapatos Clásicos" ImageSource="shoes1.jpg" />
@@ -47,7 +47,7 @@
             <Label Text="Camisetas" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
             <!-- Carousel para Camisetas -->
-            <CarouselView Loop="True" HeightRequest="300" ItemTemplate="{StaticResource ProductTemplate}">
+            <CarouselView Loop="True" HeightRequest="350" ItemTemplate="{StaticResource ProductTemplate}">
                 <CarouselView.ItemsSource>
                     <x:Array Type="{x:Type local:Product}">
                         <local:Product Name="Camiseta Básica" ImageSource="shirt1.jpg" />
@@ -66,15 +66,21 @@
     <!-- Plantilla para los productos -->
     <ContentPage.Resources>
         <DataTemplate x:Key="ProductTemplate">
-            <Grid Padding="10">
-                <Image Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" />
-                <Label Text="{Binding Name}" TextColor="White" FontSize="18" VerticalOptions="Start" HorizontalOptions="Center" />
-                <Button Text="Comprar" BackgroundColor="Red" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" />
+            <Grid Padding="10" ColumnDefinitions="*, *" RowDefinitions="Auto, *, Auto">
+                <!-- Título de Producto -->
+                <Label Text="{Binding Name}" TextColor="White" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" />
+
+                <!-- Imagen de Producto -->
+                <Image Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" Grid.Row="1" />
+
+                <!-- Botón Comprar -->
+                <Button Text="Comprar" BackgroundColor="Red" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" Grid.Row="2" />
             </Grid>
         </DataTemplate>
     </ContentPage.Resources>
 
 </ContentPage>
+
 
 
 
