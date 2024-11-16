@@ -60,7 +60,21 @@
 	  <None Remove="Resources\Images\hoodie1.jpg" />
 	  <None Remove="Resources\Images\hoodie2.jpg" />
 	  <None Remove="Resources\Images\hoodie3.jpg" />
+	  <None Remove="Resources\Images\hoodie4.jpg" />
+	  <None Remove="Resources\Images\hoodie5.jpg" />
+	  <None Remove="Resources\Images\hoodie6.jpg" />
 	  <None Remove="Resources\Images\image4.jpg" />
+	  <None Remove="Resources\Images\shirt1.jpg" />
+	  <None Remove="Resources\Images\shirt2.jpg" />
+	  <None Remove="Resources\Images\shirt3.jpg" />
+	  <None Remove="Resources\Images\shirt5.jpg" />
+	  <None Remove="Resources\Images\shirt6.jpg" />
+	  <None Remove="Resources\Images\shoes1.jpg" />
+	  <None Remove="Resources\Images\shoes2.jpg" />
+	  <None Remove="Resources\Images\shoes3.jpg" />
+	  <None Remove="Resources\Images\shoes4.jpg" />
+	  <None Remove="Resources\Images\shoes5.jpg" />
+	  <None Remove="Resources\Images\shoes6.png" />
 	</ItemGroup>
 
 	<ItemGroup>
