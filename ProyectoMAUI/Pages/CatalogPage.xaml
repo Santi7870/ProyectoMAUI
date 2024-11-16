@@ -67,14 +67,31 @@
     <ContentPage.Resources>
         <DataTemplate x:Key="ProductTemplate">
             <Grid Padding="10" ColumnDefinitions="*, *" RowDefinitions="Auto, *, Auto">
+
                 <!-- Título de Producto -->
-                <Label Text="{Binding Name}" TextColor="White" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" />
+                <Label Text="{Binding Name}" 
+                       TextColor="White" 
+                       FontSize="18" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="0" />
 
                 <!-- Imagen de Producto -->
-                <Image Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" Grid.Row="1" />
+                <Image Source="{Binding ImageSource}" 
+                       Aspect="AspectFill" 
+                       HeightRequest="250" 
+                       WidthRequest="250" 
+                       HorizontalOptions="Center" 
+                       Grid.Row="1" />
 
                 <!-- Botón Comprar -->
-                <Button Text="Comprar" BackgroundColor="Red" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" Grid.Row="2" />
+                <Button Text="Comprar" 
+                        BackgroundColor="Red" 
+                        TextColor="White" 
+                        VerticalOptions="End" 
+                        HorizontalOptions="Center" 
+                        Grid.Row="2"
+                        Clicked="OnProductBuyClicked" />
             </Grid>
         </DataTemplate>
     </ContentPage.Resources>

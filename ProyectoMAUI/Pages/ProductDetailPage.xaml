@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.ProductDetailPage"
+             Title="Detalles del Producto"
+             BackgroundColor="Black">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Nombre del Producto -->
+            <Label Text="{Binding Name}" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="White" 
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Imagen del Producto -->
+            <Image Source="{Binding ImageSource}" 
+                   HeightRequest="300" 
+                   WidthRequest="300" 
+                   Aspect="AspectFill" 
+                   HorizontalOptions="Center" />
+
+            <!-- Descripción del Producto -->
+            <Label Text="{Binding Description}" 
+                   FontSize="16" 
+                   TextColor="White" 
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Selección de Talla -->
+            <Label Text="Talla:" TextColor="White" FontSize="18" />
+            <Picker Title="Seleccionar talla" 
+                    ItemsSource="{Binding AvailableSizes}" 
+                    SelectedItem="{Binding SelectedSize}" />
+
+            <!-- Selección de Color -->
+            <Label Text="Color:" TextColor="White" FontSize="18" />
+            <Picker Title="Seleccionar color" 
+                    ItemsSource="{Binding AvailableColors}" 
+                    SelectedItem="{Binding SelectedColor}" />
+
+            <!-- Botones -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <!-- Botón Comprar -->
+                <Button Text="Comprar" 
+                        BackgroundColor="Red" 
+                        TextColor="White" 
+                        Clicked="OnBuyClicked" />
+
+                <!-- Botón Agregar al Carrito -->
+                <Button Text="Agregar al Carrito" 
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        Clicked="OnAddToCartClicked" />
+
+                <!-- Botón Regresar -->
+                <Button Text="Regresar" 
+                        BackgroundColor="Gray" 
+                        TextColor="White" 
+                        Clicked="OnBackClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

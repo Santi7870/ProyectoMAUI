@@ -21,5 +21,17 @@ namespace ProyectoMAUI.Pages
             await DisplayAlert("Compra", $"Has añadido {productName} al carrito.", "OK");
             // Implementa lógica adicional aquí, si es necesario.
         }
+
+        private async void OnProductBuyClicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var product = button?.BindingContext as Product;
+
+            if (product != null)
+            {
+                await Navigation.PushAsync(new ProductDetailPage(product));
+            }
+        }
+
     }
 }
