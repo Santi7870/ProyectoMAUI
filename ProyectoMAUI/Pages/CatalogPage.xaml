@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProyectoMAUI.Models" 
+             x:Class="ProyectoMAUI.Pages.CatalogPage"
+             Title="Catálogo"
+             BackgroundColor="Black">
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="20">
+            <!-- Sección de Hoodies -->
+            <Label Text="Hoodies" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <CarouselView Loop="True" HeightRequest="250" IndicatorView="hoodiesIndicator">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type local:Product}">
+                        <local:Product Name="Hoodie de Algodón" ImageSource="hoodie1.jpg" />
+                        <local:Product Name="Hoodie Casual" ImageSource="hoodie2.jpg" />
+                        <local:Product Name="Hoodie Deportivo" ImageSource="hoodie3.jpg" />
+                        <local:Product Name="Hoodie Elegante" ImageSource="hoodie4.jpg" />
+                        <local:Product Name="Hoodie Oversized" ImageSource="hoodie5.jpg" />
+                        <local:Product Name="Hoodie Clásico" ImageSource="hoodie6.jpg" />
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Padding="5">
+                            <Image Source="{Binding ImageSource}" HeightRequest="150" Aspect="AspectFill" />
+                            <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center" />
+                            <Button Text="Comprar" BackgroundColor="#FF4500" TextColor="Black" WidthRequest="100" Clicked="OnBuyClicked" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="hoodiesIndicator" HorizontalOptions="Center" />
+
+            <!-- Sección de Zapatos -->
+            <Label Text="Zapatos" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <CarouselView Loop="True" HeightRequest="250" IndicatorView="shoesIndicator">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type local:Product}">
+                        <local:Product Name="Zapatos Clásicos" ImageSource="shoes1.jpg" />
+                        <local:Product Name="Zapatos Deportivos" ImageSource="shoes2.jpg" />
+                        <local:Product Name="Zapatos Casual" ImageSource="shoes3.jpg" />
+                        <local:Product Name="Zapatos de Cuero" ImageSource="shoes4.jpg" />
+                        <local:Product Name="Botines Elegantes" ImageSource="shoes5.jpg" />
+                        <local:Product Name="Zapatillas Modernas" ImageSource="shoes6.jpg" />
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Padding="5">
+                            <Image Source="{Binding ImageSource}" HeightRequest="150" Aspect="AspectFill" />
+                            <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center" />
+                            <Button Text="Comprar" BackgroundColor="#1E90FF" TextColor="Black" WidthRequest="100" Clicked="OnBuyClicked" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="shoesIndicator" HorizontalOptions="Center" />
+
+            <!-- Sección de Camisetas -->
+            <Label Text="Camisetas" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <CarouselView Loop="True" HeightRequest="250" IndicatorView="shirtsIndicator">
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type local:Product}">
+                        <local:Product Name="Camiseta Básica" ImageSource="shirt1.jpg" />
+                        <local:Product Name="Camiseta Estampada" ImageSource="shirt2.jpg" />
+                        <local:Product Name="Camiseta Deportiva" ImageSource="shirt3.jpg" />
+                        <local:Product Name="Camiseta Oversized" ImageSource="shirt4.jpg" />
+                        <local:Product Name="Camiseta Casual" ImageSource="shirt5.jpg" />
+                        <local:Product Name="Camiseta Elegante" ImageSource="shirt6.jpg" />
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Padding="5">
+                            <Image Source="{Binding ImageSource}" HeightRequest="150" Aspect="AspectFill" />
+                            <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center" />
+                            <Button Text="Comprar" BackgroundColor="#32CD32" TextColor="Black" WidthRequest="100" Clicked="OnBuyClicked" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="shirtsIndicator" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+

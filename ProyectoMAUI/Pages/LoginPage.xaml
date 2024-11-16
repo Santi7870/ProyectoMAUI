@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.LoginPage"
+             Title="Iniciar Sesión"
+             BackgroundColor="Black">
+    <Grid RowDefinitions="Auto, *">
+        <!-- Encabezado fijo -->
+        <StackLayout BackgroundColor="#1E90FF" Padding="10" Grid.Row="0">
+            <Label Text="Iniciar Sesión" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="Black" 
+                   HorizontalTextAlignment="Center" />
+        </StackLayout>
+
+        <!-- Contenido desplazable -->
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="15">
+                <Entry Placeholder="Correo Electrónico" x:Name="CorreoEntry" Keyboard="Email" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Entry Placeholder="Clave" x:Name="ClaveEntry" IsPassword="True" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Button Text="Iniciar Sesión" 
+                        BackgroundColor="#FFA500" 
+                        TextColor="Black" 
+                        CornerRadius="25" 
+                        HeightRequest="50" 
+                        Clicked="OnLoginButtonClicked" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
+

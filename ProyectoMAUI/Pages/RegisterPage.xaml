@@ -1,0 +1,35 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.RegisterPage"
+             Title="Registro"
+             BackgroundColor="Black">
+    <Grid RowDefinitions="Auto, *">
+        <!-- Encabezado fijo -->
+        <StackLayout BackgroundColor="#FF4500" Padding="10" Grid.Row="0">
+            <Label Text="Registro" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="Black" 
+                   HorizontalTextAlignment="Center" />
+        </StackLayout>
+
+        <!-- Contenido desplazable -->
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="15">
+                <Entry Placeholder="Nombre" x:Name="NombreEntry" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Entry Placeholder="Apellido" x:Name="ApellidoEntry" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Entry Placeholder="Edad" Keyboard="Numeric" x:Name="EdadEntry" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Entry Placeholder="Correo Electrónico" x:Name="CorreoEntry" Keyboard="Email" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Entry Placeholder="Clave" x:Name="ClaveEntry" IsPassword="True" TextColor="White" PlaceholderColor="#CCCCCC" />
+                <Button Text="Registrar" 
+                        BackgroundColor="#32CD32" 
+                        TextColor="Black" 
+                        CornerRadius="25" 
+                        HeightRequest="50" 
+                        Clicked="OnRegisterButtonClicked" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
+
+
