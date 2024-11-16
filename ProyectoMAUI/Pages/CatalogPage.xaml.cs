@@ -1,5 +1,6 @@
 using Microsoft.Maui.Controls;
 using ProyectoMAUI.Models;
+using ProyectoMAUI.ViewModels;
 
 namespace ProyectoMAUI.Pages
 {
@@ -8,6 +9,9 @@ namespace ProyectoMAUI.Pages
         public CatalogPage()
         {
             InitializeComponent();
+
+            BindingContext = new CatalogPageViewModel();
+
         }
 
         private async void OnBuyClicked(object sender, EventArgs e)
