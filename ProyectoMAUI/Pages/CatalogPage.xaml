@@ -22,10 +22,10 @@
                 </CarouselView.ItemsSource>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Padding="5">
-                            <Image Source="{Binding ImageSource}" HeightRequest="150" Aspect="AspectFill" />
+                        <VerticalStackLayout Spacing="10" HorizontalOptions="Center" Padding="5">
+                            <Image Source="{Binding ImageSource}" HeightRequest="200" WidthRequest="200" Aspect="AspectFill" />
                             <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center" />
-                            <Button Text="Comprar" BackgroundColor="#FF4500" TextColor="Black" WidthRequest="100" Clicked="OnBuyClicked" />
+                            <Button Text="Comprar" BackgroundColor="#FF4500" TextColor="Black" WidthRequest="120" Clicked="OnBuyClicked" />
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
@@ -47,10 +47,10 @@
                 </CarouselView.ItemsSource>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Padding="5">
-                            <Image Source="{Binding ImageSource}" HeightRequest="150" Aspect="AspectFill" />
+                        <VerticalStackLayout Spacing="10" HorizontalOptions="Center" Padding="5">
+                            <Image Source="{Binding ImageSource}" HeightRequest="200" WidthRequest="200" Aspect="AspectFill" />
                             <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center" />
-                            <Button Text="Comprar" BackgroundColor="#1E90FF" TextColor="Black" WidthRequest="100" Clicked="OnBuyClicked" />
+                            <Button Text="Comprar" BackgroundColor="#1E90FF" TextColor="Black" WidthRequest="120" Clicked="OnBuyClicked" />
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
@@ -72,10 +72,10 @@
                 </CarouselView.ItemsSource>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout Spacing="5" HorizontalOptions="Center" Padding="5">
-                            <Image Source="{Binding ImageSource}" HeightRequest="150" Aspect="AspectFill" />
+                        <VerticalStackLayout Spacing="10" HorizontalOptions="Center" Padding="5">
+                            <Image Source="{Binding ImageSource}" HeightRequest="200" WidthRequest="200" Aspect="AspectFill" />
                             <Label Text="{Binding Name}" TextColor="White" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Center" />
-                            <Button Text="Comprar" BackgroundColor="#32CD32" TextColor="Black" WidthRequest="100" Clicked="OnBuyClicked" />
+                            <Button Text="Comprar" BackgroundColor="#32CD32" TextColor="Black" WidthRequest="120" Clicked="OnBuyClicked" />
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
