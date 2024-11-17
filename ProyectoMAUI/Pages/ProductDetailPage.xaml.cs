@@ -1,4 +1,5 @@
 using ProyectoMAUI.Models;
+using ProyectoMAUI.Services;
 using System.Collections.ObjectModel;
 
 namespace ProyectoMAUI.Pages
@@ -28,24 +29,28 @@ namespace ProyectoMAUI.Pages
 
         private void OnAddToCartClicked(object sender, EventArgs e)
         {
-            // Agregar el producto al carrito
-            var newItem = new CartItem
+            if (SizePicker.SelectedItem == null || ColorPicker.SelectedItem == null)
             {
-                Name = ProductNameLabel.Text,
-                Size = SizePicker.SelectedItem?.ToString(),
-                Color = ColorPicker.SelectedItem?.ToString()
+                DisplayAlert("Error", "Por favor selecciona talla y color antes de agregar al carrito.", "OK");
+                return;
+            }
+
+            // Crear un nuevo objeto CartItem con los datos seleccionados
+            var cartItem = new CartItem
+            {
+                Name = ProductNameLabel.Text, // Nombre del producto
+                Color = ColorPicker.SelectedItem.ToString(), // Color seleccionado
+                Size = SizePicker.SelectedItem.ToString(), // Talla seleccionada
+                Price = double.Parse(ProductPriceLabel.Text.Trim('$')), // Precio
+                Quantity = 1 // Cantidad predeterminada
             };
 
-            if (!string.IsNullOrEmpty(newItem.Size) && !string.IsNullOrEmpty(newItem.Color))
-            {
-                _cartItems.Add(newItem);
-                DisplayAlert("Éxito", "Producto agregado al carrito.", "OK");
-            }
-            else
-            {
-                DisplayAlert("Error", "Seleccione talla y color antes de agregar al carrito.", "OK");
-            }
+            // Agregar el producto al carrito
+            _cartItems.Add(cartItem);
+
+            DisplayAlert("Éxito", "Producto agregado al carrito.", "OK");
         }
+
 
         private void OnGoToCartClicked(object sender, EventArgs e)
         {

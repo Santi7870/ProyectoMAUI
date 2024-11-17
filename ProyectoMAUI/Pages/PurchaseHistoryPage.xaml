@@ -1,0 +1,25 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.PurchaseHistoryPage"
+             Title="Historial de Compras"
+             BackgroundColor="Black">
+    <StackLayout Padding="10">
+        <Label Text="Historial de Compras" FontSize="28" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" />
+
+        <ListView ItemsSource="{Binding Purchases}" BackgroundColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="#1E1E1E" Margin="0,5,0,5" >
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="18" TextColor="White" />
+                            <Label Text="{Binding Color}" TextColor="Gray" />
+                            <Label Text="{Binding Size}" TextColor="Gray" />
+                            <Label Text="{Binding Price, StringFormat='Precio: ${0:F2}'}" TextColor="White" FontSize="16" />
+                            <Label Text="{Binding PurchaseDate, StringFormat='Fecha: {0:dd/MM/yyyy HH:mm}'}" TextColor="Gray" FontSize="14" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
