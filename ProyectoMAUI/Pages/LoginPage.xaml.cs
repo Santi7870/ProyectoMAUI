@@ -17,28 +17,32 @@ namespace ProyectoMAUI.Pages
             var username = UsernameEntry.Text;
             var password = PasswordEntry.Text;
 
-            // Validar usuario
+            // Validar si los campos no están vacíos
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 await DisplayAlert("Error", "Por favor ingrese todos los campos.", "OK");
                 return;
             }
 
-            // Buscar usuario en la base de datos
+            // Buscar usuario en la base de datos (suponiendo que App.Database.GetUserAsync() devuelve el usuario)
             var user = await App.Database.GetUserAsync(username);
 
             if (user != null && user.Clave == password)
             {
-                // Iniciar sesión exitoso, navegar al catálogo
+                // Iniciar sesión exitoso, guardar el nombre del usuario
+                UserService.CurrentUserName = user.Nombre; // Guardar el nombre del usuario en el servicio
+
+                // Navegar al catálogo después de la autenticación
                 await Navigation.PushAsync(new CatalogPage());
             }
             else
             {
-                // Mostrar error si no se encuentra el usuario
+                // Mostrar error si no se encuentra el usuario o la contraseña es incorrecta
                 await DisplayAlert("Error", "Credenciales incorrectas", "OK");
             }
         }
     }
 }
+
 
 

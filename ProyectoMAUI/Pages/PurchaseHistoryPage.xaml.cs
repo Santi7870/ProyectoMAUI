@@ -16,5 +16,7 @@ namespace ProyectoMAUI.Pages
 
             BindingContext = this;
         }
+
+
     }
 }

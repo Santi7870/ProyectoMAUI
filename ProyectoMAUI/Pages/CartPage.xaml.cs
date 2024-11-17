@@ -49,21 +49,21 @@ namespace ProyectoMAUI.Pages
                     Color = item.Color,
                     Size = item.Size,
                     Price = item.Price,
-                    PurchaseDate = DateTime.Now
+                    PurchaseDate = DateTime.Now,
+                    BuyerName = UserService.CurrentUserName // Nombre del usuario actual
                 };
 
                 // Guardar en la base de datos
                 PurchaseService.SavePurchase(purchase);
             }
 
-            DisplayAlert("Compra realizada", $"Se ha completado la compra. Total: ${CartTotal:F2}", "OK");
+            DisplayAlert("Compra realizada", $"Compra realizada por: {UserService.CurrentUserName}\nTotal: ${CartTotal:F2}", "OK");
 
             // Limpiar carrito
             CartItems.Clear();
             CartService.ClearCart();
             OnPropertyChanged(nameof(CartTotal));
         }
-
         private void OnViewHistoryClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PurchaseHistoryPage());
