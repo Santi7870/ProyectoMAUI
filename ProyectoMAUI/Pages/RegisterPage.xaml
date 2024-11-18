@@ -16,11 +16,14 @@
         <!-- Contenido desplazable -->
         <ScrollView Grid.Row="1" Padding="20">
             <VerticalStackLayout Spacing="15">
+                <!-- Campos de entrada -->
                 <Entry Placeholder="Nombre" x:Name="NombreEntry" TextColor="White" PlaceholderColor="#CCCCCC" />
                 <Entry Placeholder="Apellido" x:Name="ApellidoEntry" TextColor="White" PlaceholderColor="#CCCCCC" />
                 <Entry Placeholder="Edad" Keyboard="Numeric" x:Name="EdadEntry" TextColor="White" PlaceholderColor="#CCCCCC" />
                 <Entry Placeholder="Correo Electrónico" x:Name="CorreoEntry" Keyboard="Email" TextColor="White" PlaceholderColor="#CCCCCC" />
                 <Entry Placeholder="Clave" x:Name="ClaveEntry" IsPassword="True" TextColor="White" PlaceholderColor="#CCCCCC" />
+
+                <!-- Botón -->
                 <Button Text="Registrar" 
                         BackgroundColor="#32CD32" 
                         TextColor="Black" 
@@ -31,5 +34,6 @@
         </ScrollView>
     </Grid>
 </ContentPage>
+
 
 

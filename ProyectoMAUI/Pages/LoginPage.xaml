@@ -5,14 +5,16 @@
              Title="Iniciar sesión"
              BackgroundColor="Black">
 
+    <!-- Habilitar desplazamiento para todo el contenido -->
     <ScrollView>
         <VerticalStackLayout Padding="30">
+            <!-- Mensaje de bienvenida -->
             <Label Text="Bienvenido de nuevo!"
                    FontSize="32"
                    HorizontalOptions="Center"
                    TextColor="White" />
 
-            <!-- Entrada de nombre de usuario -->
+            <!-- Entrada de correo electrónico -->
             <Entry x:Name="UsernameEntry"
                    Placeholder="Correo electrónico"
                    TextColor="White"
@@ -27,6 +29,7 @@
                    PlaceholderColor="Gray"
                    IsPassword="True" />
 
+            <!-- Botón para iniciar sesión -->
             <Button Text="Iniciar sesión"
                     TextColor="White"
                     BackgroundColor="Green"

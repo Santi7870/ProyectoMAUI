@@ -57,8 +57,6 @@
                 <Button Text="Ir al carrito" Clicked="OnGoToCartClicked" BackgroundColor="Orange" TextColor="White" 
                         CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />
 
-                <Button Text="Comprar" Clicked="OnBuyClicked" BackgroundColor="Blue" TextColor="White" 
-                        CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />
 
                 <Button Text="Regresar" Clicked="OnGoBackClicked" BackgroundColor="Gray" TextColor="White" 
                         CornerRadius="8" Padding="10" HeightRequest="50" WidthRequest="200" />

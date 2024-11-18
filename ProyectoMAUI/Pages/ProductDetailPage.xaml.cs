@@ -18,6 +18,8 @@ namespace ProyectoMAUI.Pages
             // Establecer los detalles del producto en la interfaz
             ProductNameLabel.Text = product.Name;
             ProductDescriptionLabel.Text = product.Description;
+            ProductImage.Source = product.ImageSource; // Establece la imagen desde el campo ImageUrl
+
 
             if (product.Price == 0)
             {
