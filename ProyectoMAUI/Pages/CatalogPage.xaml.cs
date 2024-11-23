@@ -32,6 +32,11 @@ namespace ProyectoMAUI.Pages
                 Navigation.PushAsync(new ProductDetailPage(product, _cartItems));
             }
         }
+        private async void OnOpenFlyoutClicked(object sender, EventArgs e)
+        {
+            // Muestra el Flyout
+            Shell.Current.FlyoutIsPresented = true;
+        }
 
 
 

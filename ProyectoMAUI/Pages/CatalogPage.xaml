@@ -6,6 +6,10 @@
              Title="Catálogo"
              BackgroundColor="Black">
 
+    <!-- El botón en la parte superior izquierda para abrir el menú -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
+    </ContentPage.ToolbarItems>
 
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="30">

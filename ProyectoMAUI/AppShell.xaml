@@ -4,31 +4,7 @@
        xmlns:local="clr-namespace:ProyectoMAUI.Pages"
        x:Class="ProyectoMAUI.AppShell">
 
-    <!-- Flyout Menu -->
-    <FlyoutItem Title="Inicio" Icon="dotnet_bot.png">
-        
-            <ShellContent Title="Catálogo" Icon="icon_catalog.png" ContentTemplate="{DataTemplate local:CatalogPage}" />
-   
-    </FlyoutItem>
-
-    <!-- Otra navegación, si es necesario -->
-    <FlyoutItem Title="Informacion del Usuario" Icon="icon_product.png">
-        <ShellContent Title="Informacion del Usuario" ContentTemplate="{DataTemplate local:UserInfoPage}" />
-    </FlyoutItem>
-
-    <FlyoutItem Title="Historial de Compras" Icon="icon_product.png">
-        <ShellContent Title="" ContentTemplate="{DataTemplate local:PurchaseHistoryPage}" />
-    </FlyoutItem>
-    
-        <MenuItem Text="Cerrar sesión" Clicked="OnLogoutClicked" />
-
-    <FlyoutItem Title="Menu">
-            <!-- Páginas dentro del TabBar -->
-                <local:CatalogPage />
-                <local:PurchaseHistoryPage />
-                <local:SettingsPage />
-    </FlyoutItem>
-
+    <!-- Navegación Principal (TabBar) -->
     <TabBar>
 
         <!-- Pestaña de Catálogo -->
@@ -45,9 +21,26 @@
 
     </TabBar>
 
+    <!-- Flyout (menú lateral) para opciones adicionales, como "Cerrar sesión" -->
+    <FlyoutItem Title="Inicio" Icon="dotnet_bot.png">
 
+        <ShellContent Title="Catálogo" Icon="icon_catalog.png" ContentTemplate="{DataTemplate local:CatalogPage}" />
 
+    </FlyoutItem>
 
+    <!-- Otra navegación, si es necesario -->
+    <FlyoutItem Title="Informacion del Usuario" Icon="icon_product.png">
+        <ShellContent Title="Informacion del Usuario" ContentTemplate="{DataTemplate local:UserInfoPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Historial de Compras" Icon="icon_product.png">
+        <ShellContent Title="" ContentTemplate="{DataTemplate local:PurchaseHistoryPage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Cerrar sesión" Clicked="OnLogoutClicked" />
 
 </Shell>
+
+
+
 

@@ -1,8 +1,7 @@
 ﻿using ProyectoMAUI.Services;
-using SQLite;
-using System;
-using Microsoft.Maui.Controls;
 using ProyectoMAUI.Pages;
+using Microsoft.Maui.Controls;
+using System;
 
 namespace ProyectoMAUI
 {
@@ -28,10 +27,22 @@ namespace ProyectoMAUI
         {
             InitializeComponent();
 
-            // Iniciar con la WelcomePage
-            MainPage = new NavigationPage(new WelcomePage());
+            // Verificar si el usuario ya ha iniciado sesión
+            var userLoggedIn = UserService.CurrentUser != null;
+
+            if (userLoggedIn)
+            {
+                // Si ya está autenticado, ir directamente a AppShell (con TabBar y Flyout)
+                MainPage = new AppShell();
+            }
+            else
+            {
+                // Si no está autenticado, ir a la WelcomePage
+                MainPage = new NavigationPage(new WelcomePage());
+            }
         }
     }
 }
+
 
 
