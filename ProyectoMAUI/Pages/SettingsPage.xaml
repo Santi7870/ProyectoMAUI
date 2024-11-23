@@ -5,6 +5,10 @@
              Title="Configuración"
     BackgroundColor="{DynamicResource BackgroundColor}">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
+    </ContentPage.ToolbarItems>
+
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">

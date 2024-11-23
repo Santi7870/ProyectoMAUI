@@ -14,6 +14,12 @@ namespace ProyectoMAUI.Pages
             LoadUserData(); // Cargar la información del usuario actual
         }
 
+        private async void OnOpenFlyoutClicked(object sender, EventArgs e)
+        {
+            // Muestra el Flyout
+            Shell.Current.FlyoutIsPresented = true;
+        }
+
         // Cargar datos del usuario en los campos
         private void LoadUserData()
         {
