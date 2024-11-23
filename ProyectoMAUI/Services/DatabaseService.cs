@@ -30,6 +30,12 @@ namespace ProyectoMAUI.Services
         {
             return await _database.InsertAsync(user);
         }
+
+        public async Task<int> UpdateUserAsync(Usuario user)
+        {
+            return await _database.UpdateAsync(user);
+        }
+
     }
 }
 

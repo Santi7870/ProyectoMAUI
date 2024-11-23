@@ -2,23 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoMAUI.Pages.SettingsPage"
-             Title="Ajustes"
-             BackgroundColor="White">
+             Title="Configuración">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
-    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Cambiar color de fondo -->
+            <Label Text="Cambiar color de fondo" FontSize="18" />
+            <Picker x:Name="ColorPicker"
+                    Title="Selecciona un color"
+                    SelectedIndexChanged="OnColorSelected">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Blanco</x:String>
+                        <x:String>Negro</x:String>
+                        <x:String>Azul</x:String>
+                        <x:String>Verde</x:String>
+                        <x:String>Rojo</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <Label Text="Configuración"
-               FontSize="24"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
+            <!-- Cambiar información del usuario -->
+            <Label Text="Editar información del usuario" FontSize="18" />
 
-        <Label Text="Aquí puedes configurar las opciones de la aplicación."
-               FontSize="18"
-               HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="NombreEntry" Placeholder="Nombre" />
+            <Entry x:Name="ApellidoEntry" Placeholder="Apellido" />
+            <Entry x:Name="CorreoEntry" Placeholder="Correo electrónico" />
+            <Entry x:Name="ClaveEntry" Placeholder="Contraseña" IsPassword="True" />
 
-        <!-- Agrega más controles según sea necesario para la configuración -->
-    </VerticalStackLayout>
+            <Button Text="Guardar cambios" Clicked="OnSaveChangesClicked" BackgroundColor="LightBlue" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
+
