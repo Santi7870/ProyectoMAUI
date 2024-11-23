@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProyectoMAUI.Pages"
+             x:Class="ProyectoMAUI.Pages.UserInfoPage"
+             Title="Información del Usuario"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <!-- Mostrar la información del usuario -->
+        <Label Text="Nombre:"
+               FontSize="20"
+               TextColor="Black" />
+        <Label Text="{Binding Nombre}"
+               FontSize="18"
+               TextColor="Black" />
+
+        <Label Text="Apellido:"
+               FontSize="20"
+               TextColor="Black" />
+        <Label Text="{Binding Apellido}"
+               FontSize="18"
+               TextColor="Black" />
+
+        <Label Text="Edad:"
+               FontSize="20"
+               TextColor="Black" />
+        <Label Text="{Binding Edad}"
+               FontSize="18"
+               TextColor="Black" />
+
+        <Label Text="Correo:"
+               FontSize="20"
+               TextColor="Black" />
+        <Label Text="{Binding Correo}"
+               FontSize="18"
+               TextColor="Black" />
+    </VerticalStackLayout>
+</ContentPage>

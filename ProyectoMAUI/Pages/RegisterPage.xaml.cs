@@ -19,6 +19,7 @@ namespace ProyectoMAUI.Pages
 
         private async void OnRegisterButtonClicked(object sender, EventArgs e)
         {
+            // Validar que no haya campos vacíos
             if (string.IsNullOrEmpty(NombreEntry.Text) || string.IsNullOrEmpty(ApellidoEntry.Text) ||
                 string.IsNullOrEmpty(EdadEntry.Text) || string.IsNullOrEmpty(CorreoEntry.Text) ||
                 string.IsNullOrEmpty(ClaveEntry.Text))
@@ -27,21 +28,40 @@ namespace ProyectoMAUI.Pages
                 return;
             }
 
+            // Validar que la edad sea un número válido
+            if (!int.TryParse(EdadEntry.Text, out int edad))
+            {
+                await DisplayAlert("Error", "La edad debe ser un número válido.", "OK");
+                return;
+            }
+
+            // Comprobar si el correo ya existe en la base de datos
+            var existingUser = await _databaseService.GetUserAsync(CorreoEntry.Text);
+            if (existingUser != null)
+            {
+                await DisplayAlert("Error", "Ya existe un usuario con ese correo.", "OK");
+                return;
+            }
+
+            // Crear el usuario con los datos ingresados
             var usuario = new Usuario
             {
                 Nombre = NombreEntry.Text,
                 Apellido = ApellidoEntry.Text,
-                Edad = int.Parse(EdadEntry.Text),
+                Edad = edad,
                 Correo = CorreoEntry.Text,
                 Clave = ClaveEntry.Text
             };
 
-            // Llamar al método para registrar el usuario
-            await _databaseService.AddUserAsync(usuario);  // Suponiendo que tienes un método AddUserAsync para agregar usuarios
+            // Registrar el nuevo usuario en la base de datos
+            await _databaseService.AddUserAsync(usuario);
             await DisplayAlert("Éxito", "Usuario registrado correctamente", "OK");
-            await Navigation.PopAsync();
+
+            // Redirigir a la página de inicio de sesión
+            await Navigation.PopAsync();  // O también puedes navegar a otra página si lo prefieres
         }
     }
 }
+
 
 

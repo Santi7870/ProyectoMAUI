@@ -6,6 +6,7 @@
              Title="Catálogo"
              BackgroundColor="Black">
 
+
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="30">
             <!-- Sección de Hoodies -->

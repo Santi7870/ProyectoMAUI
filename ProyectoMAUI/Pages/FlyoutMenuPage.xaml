@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ProyectoMAUI.Pages"
+            x:Class="ProyectoMAUI.Pages.FlyoutMenuPage">
+
+    <!-- Flyout content (menu lateral) -->
+    <FlyoutPage.Flyout>
+        <ContentPage>
+            <VerticalStackLayout Padding="10">
+                <Button Text="Información del Usuario"
+                        Clicked="OnUserInfoButtonClicked"
+                        BackgroundColor="RoyalBlue"
+                        TextColor="White" />
+            </VerticalStackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <!-- Main content -->
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:WelcomePage />
+                <!-- Asegúrate de que HomePage esté correctamente referenciado -->
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
+

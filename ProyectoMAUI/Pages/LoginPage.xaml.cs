@@ -1,6 +1,8 @@
 using ProyectoMAUI.Models;
 using ProyectoMAUI.Services;
 using Microsoft.Maui.Controls;
+using System;
+using System.IO;
 
 namespace ProyectoMAUI.Pages
 {
@@ -13,36 +15,50 @@ namespace ProyectoMAUI.Pages
 
         private async void OnLoginClicked(object sender, EventArgs e)
         {
-            // Verifica si los controles de entrada están correctamente configurados
             var username = UsernameEntry.Text;
             var password = PasswordEntry.Text;
 
-            // Validar si los campos no están vacíos
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            // Validación de campos
+            if (string.IsNullOrEmpty(username))
             {
-                await DisplayAlert("Error", "Por favor ingrese todos los campos.", "OK");
+                await DisplayAlert("Error", "Por favor ingrese el correo electrónico.", "OK");
                 return;
             }
 
-            // Buscar usuario en la base de datos (suponiendo que App.Database.GetUserAsync() devuelve el usuario)
-            var user = await App.Database.GetUserAsync(username);
+            if (string.IsNullOrEmpty(password))
+            {
+                await DisplayAlert("Error", "Por favor ingrese la contraseña.", "OK");
+                return;
+            }
 
+            // Ruta correcta de la base de datos
+            var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "users.db3");
+            var databaseService = new DatabaseService(dbPath);
+
+            // Buscar el usuario por correo (o nombre de usuario si usas un campo diferente)
+            var user = await databaseService.GetUserAsync(username);
+
+            // Verificar si el usuario existe y la contraseña es correcta
             if (user != null && user.Clave == password)
             {
-                // Iniciar sesión exitoso, guardar el nombre del usuario
-                UserService.CurrentUserName = user.Nombre; // Guardar el nombre del usuario en el servicio
+                // Iniciar sesión exitoso, guardar el usuario completo en el servicio
+                UserService.CurrentUser = user; // Guardamos el usuario actual
+                UserService.CurrentUserName = user.Nombre; // Asignamos el nombre del usuario a CurrentUserName
 
-                // Navegar al catálogo después de la autenticación
-                await Navigation.PushAsync(new CatalogPage());
+                // Navegar a AppShell después del inicio de sesión
+                Application.Current.MainPage = new AppShell();
             }
             else
             {
-                // Mostrar error si no se encuentra el usuario o la contraseña es incorrecta
                 await DisplayAlert("Error", "Credenciales incorrectas", "OK");
             }
         }
     }
 }
+
+
+
+
 
 
 

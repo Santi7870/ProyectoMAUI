@@ -7,6 +7,8 @@ namespace ProyectoMAUI.Pages
         public WelcomePage()
         {
             InitializeComponent();
+            Application.Current.MainPage = new AppShell();
+
         }
 
         private async void OnRegisterClicked(object sender, EventArgs e)

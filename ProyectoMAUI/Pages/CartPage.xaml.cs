@@ -51,6 +51,7 @@ namespace ProyectoMAUI.Pages
                     Price = item.Price,
                     PurchaseDate = DateTime.Now,
                     BuyerName = UserService.CurrentUserName // Nombre del usuario actual
+
                 };
 
                 // Guardar en la base de datos

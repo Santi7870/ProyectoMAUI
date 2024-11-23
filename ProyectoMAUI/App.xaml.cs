@@ -29,7 +29,7 @@ namespace ProyectoMAUI
             InitializeComponent();
 
             // Aquí puedes definir la página principal como LoginPage o cualquier otra
-            MainPage = new NavigationPage(new WelcomePage()); // Esto debe llevarte a LoginPage cuando la aplicación inicie
+            MainPage = new NavigationPage(new WelcomePage());
         }
     }
 }
