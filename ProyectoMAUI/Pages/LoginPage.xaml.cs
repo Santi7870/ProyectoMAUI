@@ -46,7 +46,7 @@ namespace ProyectoMAUI.Pages
                 UserService.CurrentUserName = user.Nombre; // Asignamos el nombre del usuario a CurrentUserName
 
                 // Navegar a AppShell después del inicio de sesión
-                Application.Current.MainPage = new AppShell();
+                Application.Current.MainPage = new AppShell(); // Cambiar a AppShell con Flyout y TabBar
             }
             else
             {
@@ -55,6 +55,7 @@ namespace ProyectoMAUI.Pages
         }
     }
 }
+
 
 
 

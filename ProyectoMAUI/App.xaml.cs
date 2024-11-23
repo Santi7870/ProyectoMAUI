@@ -28,7 +28,7 @@ namespace ProyectoMAUI
         {
             InitializeComponent();
 
-            // Aquí puedes definir la página principal como LoginPage o cualquier otra
+            // Iniciar con la WelcomePage
             MainPage = new NavigationPage(new WelcomePage());
         }
     }

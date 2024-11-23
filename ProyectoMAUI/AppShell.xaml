@@ -19,8 +19,31 @@
     <FlyoutItem Title="Historial de Compras" Icon="icon_product.png">
         <ShellContent Title="" ContentTemplate="{DataTemplate local:PurchaseHistoryPage}" />
     </FlyoutItem>
+    
+        <MenuItem Text="Cerrar sesión" Clicked="OnLogoutClicked" />
 
-    <MenuItem Text="Cerrar sesión" Clicked="OnLogoutClicked" />
+    <FlyoutItem Title="Menu">
+            <!-- Páginas dentro del TabBar -->
+                <local:CatalogPage />
+                <local:PurchaseHistoryPage />
+                <local:SettingsPage />
+    </FlyoutItem>
+
+    <TabBar>
+
+        <!-- Pestaña de Catálogo -->
+        <ShellContent Title="Catálogo" Icon="icon_catalog.png" ContentTemplate="{DataTemplate local:CatalogPage}" />
+
+        <!-- Pestaña de Información del Usuario -->
+        <ShellContent Title="Información del Usuario" Icon="icon_user.png" ContentTemplate="{DataTemplate local:UserInfoPage}" />
+
+        <!-- Pestaña de Historial de Compras -->
+        <ShellContent Title="Historial de Compras" Icon="icon_history.png" ContentTemplate="{DataTemplate local:PurchaseHistoryPage}" />
+
+        <!-- Pestaña de Configuración -->
+        <ShellContent Title="Configuración" Icon="icon_settings.png" ContentTemplate="{DataTemplate local:SettingsPage}" />
+
+    </TabBar>
 
 
 

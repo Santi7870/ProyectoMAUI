@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.SettingsPage"
+             Title="Ajustes"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Configuración"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Label Text="Aquí puedes configurar las opciones de la aplicación."
+               FontSize="18"
+               HorizontalOptions="CenterAndExpand" />
+
+        <!-- Agrega más controles según sea necesario para la configuración -->
+    </VerticalStackLayout>
+</ContentPage>
