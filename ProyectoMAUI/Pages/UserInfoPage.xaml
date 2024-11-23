@@ -4,36 +4,61 @@
              xmlns:local="clr-namespace:ProyectoMAUI.Pages"
              x:Class="ProyectoMAUI.Pages.UserInfoPage"
              Title="Información del Usuario"
-             BackgroundColor="White">
+             BackgroundColor="Black">
 
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <!-- Mostrar la información del usuario -->
-        <Label Text="Nombre:"
-               FontSize="20"
-               TextColor="Black" />
-        <Label Text="{Binding Nombre}"
-               FontSize="18"
-               TextColor="Black" />
+    <VerticalStackLayout Padding="20" Spacing="15" HorizontalOptions="CenterAndExpand">
+        <!-- Título de la página -->
+        <Label Text="Información del Usuario"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20" />
 
-        <Label Text="Apellido:"
-               FontSize="20"
-               TextColor="Black" />
-        <Label Text="{Binding Apellido}"
-               FontSize="18"
-               TextColor="Black" />
+        <!-- Mostrar la información del usuario con un estilo elegante -->
+        <Frame BackgroundColor="Transparent" BorderColor="White" HasShadow="True" Padding="10">
+            <StackLayout Spacing="15">
+                <Label Text="Nombre:" 
+                       FontSize="20" 
+                       TextColor="White" />
+                <Label Text="{Binding Nombre}" 
+                       FontSize="18" 
+                       TextColor="Gray" />
+            </StackLayout>
+        </Frame>
 
-        <Label Text="Edad:"
-               FontSize="20"
-               TextColor="Black" />
-        <Label Text="{Binding Edad}"
-               FontSize="18"
-               TextColor="Black" />
+        <Frame BackgroundColor="Transparent" BorderColor="White" HasShadow="True" Padding="10">
+            <StackLayout Spacing="15">
+                <Label Text="Apellido:" 
+                       FontSize="20" 
+                       TextColor="White" />
+                <Label Text="{Binding Apellido}" 
+                       FontSize="18" 
+                       TextColor="Gray" />
+            </StackLayout>
+        </Frame>
 
-        <Label Text="Correo:"
-               FontSize="20"
-               TextColor="Black" />
-        <Label Text="{Binding Correo}"
-               FontSize="18"
-               TextColor="Black" />
+        <Frame BackgroundColor="Transparent" BorderColor="White" HasShadow="True" Padding="10">
+            <StackLayout Spacing="15">
+                <Label Text="Edad:" 
+                       FontSize="20" 
+                       TextColor="White" />
+                <Label Text="{Binding Edad}" 
+                       FontSize="18" 
+                       TextColor="Gray" />
+            </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="Transparent" BorderColor="White" HasShadow="True" Padding="10">
+            <StackLayout Spacing="15">
+                <Label Text="Correo:" 
+                       FontSize="20" 
+                       TextColor="White" />
+                <Label Text="{Binding Correo}" 
+                       FontSize="18" 
+                       TextColor="Gray" />
+            </StackLayout>
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>
+

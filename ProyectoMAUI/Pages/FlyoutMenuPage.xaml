@@ -8,10 +8,10 @@
     <FlyoutPage.Flyout>
         <ContentPage>
             <VerticalStackLayout Padding="10">
-                <Button Text="Información del Usuario"
-                        Clicked="OnUserInfoButtonClicked"
-                        BackgroundColor="RoyalBlue"
-                        TextColor="White" />
+                <!-- Mostrar la información del usuario -->
+                <Label Text="Información del Usuario" FontSize="Medium" HorizontalOptions="Center" />
+                <Label Text="{Binding UserName}" FontSize="Medium" HorizontalOptions="Center" />
+                <Label Text="{Binding UserEmail}" FontSize="Medium" HorizontalOptions="Center" />
             </VerticalStackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>
@@ -21,9 +21,11 @@
         <NavigationPage>
             <x:Arguments>
                 <local:WelcomePage />
-                <!-- Asegúrate de que HomePage esté correctamente referenciado -->
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>
 </FlyoutPage>
+
+
+
 

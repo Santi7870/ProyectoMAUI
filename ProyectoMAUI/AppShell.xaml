@@ -12,9 +12,19 @@
     </FlyoutItem>
 
     <!-- Otra navegación, si es necesario -->
-    <FlyoutItem Title="Producto Detalle" Icon="icon_product.png">
-        <ShellContent Title="Detalles del Producto" ContentTemplate="{DataTemplate local:UserInfoPage}" />
+    <FlyoutItem Title="Informacion del Usuario" Icon="icon_product.png">
+        <ShellContent Title="Informacion del Usuario" ContentTemplate="{DataTemplate local:UserInfoPage}" />
     </FlyoutItem>
+
+    <FlyoutItem Title="Historial de Compras" Icon="icon_product.png">
+        <ShellContent Title="" ContentTemplate="{DataTemplate local:PurchaseHistoryPage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Cerrar sesión" Clicked="OnLogoutClicked" />
+
+
+
+
 
 </Shell>
 
