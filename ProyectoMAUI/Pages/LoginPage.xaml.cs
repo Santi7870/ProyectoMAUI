@@ -45,6 +45,12 @@ namespace ProyectoMAUI.Pages
                 UserService.CurrentUser = user; // Guardamos el usuario actual
                 UserService.CurrentUserName = user.Nombre; // Asignamos el nombre del usuario a CurrentUserName
 
+                // Aplicar el color de fondo del usuario
+                if (!string.IsNullOrEmpty(user.BackgroundColor))
+                {
+                    Application.Current.Resources["BackgroundColor"] = Color.FromArgb(user.BackgroundColor);
+                }
+
                 // Navegar a AppShell después del inicio de sesión
                 Application.Current.MainPage = new AppShell(); // Cambiar a AppShell con Flyout y TabBar
             }
@@ -55,6 +61,7 @@ namespace ProyectoMAUI.Pages
         }
     }
 }
+
 
 
 

@@ -23,43 +23,52 @@ namespace ProyectoMAUI.Pages
                 ApellidoEntry.Text = UserService.CurrentUser.Apellido;
                 CorreoEntry.Text = UserService.CurrentUser.Correo;
                 ClaveEntry.Text = UserService.CurrentUser.Clave;
+                // Asignar el color de fondo actual al recurso de color global
+                Application.Current.Resources["BackgroundColor"] = Color.FromArgb(UserService.CurrentUser.BackgroundColor);
             }
         }
 
         // Cambiar el color de fondo
-        private void OnColorSelected(object sender, EventArgs e)
+        private async void OnColorSelected(object sender, EventArgs e)
         {
             var selectedColor = ColorPicker.SelectedItem?.ToString();
 
-            Color newColor = Colors.Black; // Color predeterminado (Negro)
+            string newColorHex = "#000000"; // Negro por defecto
 
             switch (selectedColor)
             {
                 case "Negro":
-                    newColor = Colors.Black;
+                    newColorHex = "#000000";
                     break;
                 case "Gris Oscuro":
-                    newColor = Color.FromArgb("#2C2C2C");
+                    newColorHex = "#2C2C2C";
                     break;
                 case "Azul Marino":
-                    newColor = Color.FromArgb("#1A1F71");
+                    newColorHex = "#1A1F71";
                     break;
                 case "Vino":
-                    newColor = Color.FromArgb("#4B1C25");
+                    newColorHex = "#4B1C25";
                     break;
                 case "Verde Oscuro":
-                    newColor = Color.FromArgb("#1B4D3E");
+                    newColorHex = "#1B4D3E";
                     break;
             }
 
-            // Actualizar el recurso global
-            Application.Current.Resources["BackgroundColor"] = newColor;
+            // Actualizar el color del usuario en la base de datos
+            var currentUser = UserService.CurrentUser;
+            if (currentUser != null)
+            {
+                currentUser.BackgroundColor = newColorHex;
+                var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "users.db3");
+                var databaseService = new DatabaseService(dbPath);
+                await databaseService.UpdateUserAsync(currentUser); // Método para guardar cambios
+            }
 
-            // Notificar al usuario
-            DisplayAlert("Éxito", "El color de fondo ha sido actualizado.", "OK");
+            // Aplicar el color a la aplicación
+            Application.Current.Resources["BackgroundColor"] = Color.FromArgb(newColorHex);
+
+            await DisplayAlert("Éxito", "El color de fondo ha sido actualizado.", "OK");
         }
-
-
 
         // Guardar cambios en los datos del usuario
         private async void OnSaveChangesClicked(object sender, EventArgs e)
@@ -88,8 +97,9 @@ namespace ProyectoMAUI.Pages
                 var databaseService = new DatabaseService(dbPath);
 
                 await databaseService.UpdateUserAsync(user);
-                await DisplayAlert("Éxito", "Para que se actualice a información del usuario, porfavor Cerrar la sesion.", "OK");
+                await DisplayAlert("Éxito", "Para que se actualice la información del usuario, por favor cierre la sesión.", "OK");
             }
         }
     }
 }
+
