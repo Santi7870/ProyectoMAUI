@@ -6,4 +6,10 @@ public partial class SettingsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void OnOpenFlyoutClicked(object sender, EventArgs e)
+    {
+        // Muestra el Flyout
+        Shell.Current.FlyoutIsPresented = true;
+    }
 }

@@ -6,6 +6,10 @@
              Title="Información del Usuario"
              BackgroundColor="Black">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
+    </ContentPage.ToolbarItems>
+
     <VerticalStackLayout Padding="20" Spacing="15" HorizontalOptions="CenterAndExpand">
         <!-- Título de la página -->
         <Label Text="Información del Usuario"

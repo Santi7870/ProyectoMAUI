@@ -5,6 +5,10 @@
              Title="Carrito de Compras"
              BackgroundColor="Black">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <StackLayout Padding="10">
             <!-- Título del carrito -->

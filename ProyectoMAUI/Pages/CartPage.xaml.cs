@@ -76,6 +76,12 @@ namespace ProyectoMAUI.Pages
         {
             Navigation.PopAsync();
         }
+
+        private async void OnOpenFlyoutClicked(object sender, EventArgs e)
+        {
+            // Muestra el Flyout
+            Shell.Current.FlyoutIsPresented = true;
+        }
     }
 }
 

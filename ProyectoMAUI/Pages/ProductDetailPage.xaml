@@ -4,6 +4,10 @@
              Title="Detalles del Producto"
              BackgroundColor="Black">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView Padding="20">
         <VerticalStackLayout Spacing="25">
 

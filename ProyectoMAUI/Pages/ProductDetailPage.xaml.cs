@@ -91,6 +91,12 @@ namespace ProyectoMAUI.Pages
                 SelectedColorLabel.Text = $"Color seleccionado: {picker.SelectedItem}";
             }
         }
+
+        private async void OnOpenFlyoutClicked(object sender, EventArgs e)
+        {
+            // Muestra el Flyout
+            Shell.Current.FlyoutIsPresented = true;
+        }
     }
 }
 

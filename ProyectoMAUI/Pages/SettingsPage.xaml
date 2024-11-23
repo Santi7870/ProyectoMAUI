@@ -5,6 +5,10 @@
              Title="Ajustes"
              BackgroundColor="White">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
+    </ContentPage.ToolbarItems>
+
     <VerticalStackLayout Padding="20" Spacing="10">
         <Label Text="Configuración"
                FontSize="24"

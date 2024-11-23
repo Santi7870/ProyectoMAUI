@@ -3,6 +3,10 @@
              x:Class="ProyectoMAUI.Pages.PurchaseHistoryPage"
              Title="Historial de Compras"
              BackgroundColor="Black">
+
+
+
+    
     <StackLayout Padding="10">
         <Label Text="Historial de Compras" FontSize="28" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold" />
 

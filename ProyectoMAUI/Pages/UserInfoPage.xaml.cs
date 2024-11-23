@@ -12,5 +12,11 @@ namespace ProyectoMAUI.Pages
             // Establecer el BindingContext con el usuario actual
             BindingContext = UserService.CurrentUser;
         }
+
+        private async void OnOpenFlyoutClicked(object sender, EventArgs e)
+        {
+            // Muestra el Flyout
+            Shell.Current.FlyoutIsPresented = true;
+        }
     }
 }
