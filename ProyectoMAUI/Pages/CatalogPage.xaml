@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ProyectoMAUI.Models"
              x:Class="ProyectoMAUI.Pages.CatalogPage"
+             
              Title="Catálogo"
-             BackgroundColor="Black">
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
     <!-- El botón en la parte superior izquierda para abrir el menú -->
     <ContentPage.ToolbarItems>

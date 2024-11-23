@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:ProyectoMAUI.Pages"
              x:Class="ProyectoMAUI.Pages.UserInfoPage"
              Title="Información del Usuario"
-             BackgroundColor="Black">
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />

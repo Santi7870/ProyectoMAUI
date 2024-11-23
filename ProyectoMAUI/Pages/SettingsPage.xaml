@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoMAUI.Pages.SettingsPage"
-             Title="Configuración">
+             Title="Configuración"
+    BackgroundColor="{DynamicResource BackgroundColor}">
+
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
@@ -13,11 +15,11 @@
                     SelectedIndexChanged="OnColorSelected">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Blanco</x:String>
                         <x:String>Negro</x:String>
-                        <x:String>Azul</x:String>
-                        <x:String>Verde</x:String>
-                        <x:String>Rojo</x:String>
+                        <x:String>Gris Oscuro</x:String>
+                        <x:String>Azul Marino</x:String>
+                        <x:String>Vino</x:String>
+                        <x:String>Verde Oscuro</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>

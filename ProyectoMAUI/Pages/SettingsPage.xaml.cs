@@ -31,28 +31,35 @@ namespace ProyectoMAUI.Pages
         {
             var selectedColor = ColorPicker.SelectedItem?.ToString();
 
+            Color newColor = Colors.Black; // Color predeterminado (Negro)
+
             switch (selectedColor)
             {
-                case "Blanco":
-                    Application.Current.MainPage.BackgroundColor = Colors.White;
-                    break;
                 case "Negro":
-                    Application.Current.MainPage.BackgroundColor = Colors.Black;
+                    newColor = Colors.Black;
                     break;
-                case "Azul":
-                    Application.Current.MainPage.BackgroundColor = Colors.Blue;
+                case "Gris Oscuro":
+                    newColor = Color.FromArgb("#2C2C2C");
                     break;
-                case "Verde":
-                    Application.Current.MainPage.BackgroundColor = Colors.Green;
+                case "Azul Marino":
+                    newColor = Color.FromArgb("#1A1F71");
                     break;
-                case "Rojo":
-                    Application.Current.MainPage.BackgroundColor = Colors.Red;
+                case "Vino":
+                    newColor = Color.FromArgb("#4B1C25");
                     break;
-                default:
-                    Application.Current.MainPage.BackgroundColor = Colors.White;
+                case "Verde Oscuro":
+                    newColor = Color.FromArgb("#1B4D3E");
                     break;
             }
+
+            // Actualizar el recurso global
+            Application.Current.Resources["BackgroundColor"] = newColor;
+
+            // Notificar al usuario
+            DisplayAlert("Éxito", "El color de fondo ha sido actualizado.", "OK");
         }
+
+
 
         // Guardar cambios en los datos del usuario
         private async void OnSaveChangesClicked(object sender, EventArgs e)
