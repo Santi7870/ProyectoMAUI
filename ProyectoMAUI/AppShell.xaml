@@ -22,20 +22,26 @@
     </TabBar>
 
     <!-- Flyout (menú lateral) para opciones adicionales, como "Cerrar sesión" -->
-    <FlyoutItem Title="Inicio" Icon="dotnet_bot.png">
+    <FlyoutItem Title="Catálogo" Icon="icon_catalog2.png">
 
         <ShellContent Title="Catálogo" Icon="icon_catalog.png" ContentTemplate="{DataTemplate local:CatalogPage}" />
 
     </FlyoutItem>
 
     <!-- Otra navegación, si es necesario -->
-    <FlyoutItem Title="Informacion del Usuario" Icon="icon_product.png">
+    <FlyoutItem Title="Informacion del Usuario" Icon="icon_user2.png">
         <ShellContent Title="Informacion del Usuario" ContentTemplate="{DataTemplate local:UserInfoPage}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Historial de Compras" Icon="icon_product.png">
+    <FlyoutItem Title="Historial de Compras" Icon="icon_history2.png">
         <ShellContent Title="" ContentTemplate="{DataTemplate local:PurchaseHistoryPage}" />
     </FlyoutItem>
+
+    <FlyoutItem Title="Configuracion" Icon="icon_settings2.png">
+        <ShellContent Title="" ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
+
+
 
     <MenuItem Text="Cerrar sesión" Clicked="OnLogoutClicked" />
 

@@ -63,7 +63,16 @@
 	  <None Remove="Resources\Images\hoodie4.jpg" />
 	  <None Remove="Resources\Images\hoodie5.jpg" />
 	  <None Remove="Resources\Images\hoodie6.jpg" />
+	  <None Remove="Resources\Images\icon_catalog.png" />
+	  <None Remove="Resources\Images\icon_catalog2.png" />
+	  <None Remove="Resources\Images\icon_history.png" />
+	  <None Remove="Resources\Images\icon_history2.png" />
+	  <None Remove="Resources\Images\icon_settings.png" />
+	  <None Remove="Resources\Images\icon_settings2.png" />
+	  <None Remove="Resources\Images\icon_user.png" />
+	  <None Remove="Resources\Images\icon_user2.png" />
 	  <None Remove="Resources\Images\image4.jpg" />
+	  <None Remove="Resources\Images\logout_icon.png" />
 	  <None Remove="Resources\Images\shirt1.jpg" />
 	  <None Remove="Resources\Images\shirt2.jpg" />
 	  <None Remove="Resources\Images\shirt3.jpg" />
