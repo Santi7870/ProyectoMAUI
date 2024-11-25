@@ -18,5 +18,8 @@ namespace ProyectoMAUI.Models
         public string Clave { get; set; }
         public string BackgroundColor { get; set; } = "#000000"; // Por defecto negro
 
+        public string ProfileImagen { get; set; }; // Por defecto negro
+
+
     }
 }
