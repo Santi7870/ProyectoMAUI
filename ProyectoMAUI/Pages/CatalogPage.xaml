@@ -80,11 +80,13 @@
                 <!-- Descripción del Producto -->
                 <Label Text="{Binding Description}" TextColor="Gray" FontSize="14" HorizontalOptions="Center" />
 
+
                 <!-- Botón Comprar -->
                 <Button Text="Comprar" BackgroundColor="Red" TextColor="White" WidthRequest="100" HorizontalOptions="Center" Clicked="OnProductBuyClicked" />
             </StackLayout>
         </DataTemplate>
     </ContentPage.Resources>
+
 
 </ContentPage>
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMAUI.Pages.PedidoPage"
+             Title="PedidoPage">
+    <StackLayout Padding="30">
+        <Label Text="Nombre del Producto" />
+        <Entry x:Name="ProductName" Placeholder="Ingrese el nombre" />
+
+        <Label Text="Descripción del Producto" />
+        <Entry x:Name="ProductDescription" Placeholder="Ingrese la descripción" />
+
+        <Button Text="Guardar Producto" Clicked="OnSaveProductClicked" />
+    </StackLayout>
+</ContentPage>

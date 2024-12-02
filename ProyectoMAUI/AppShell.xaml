@@ -2,7 +2,10 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:ProyectoMAUI.Pages"
+           Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="True"
        x:Class="ProyectoMAUI.AppShell">
+    
 
     <!-- Navegación Principal (TabBar) -->
     <TabBar>
@@ -18,6 +21,9 @@
 
         <!-- Pestaña de Configuración -->
         <ShellContent Title="Configuración" Icon="icon_settings.png" ContentTemplate="{DataTemplate local:SettingsPage}" />
+        
+        <ShellContent Title="Pedidos" Icon="icon_settings.png" ContentTemplate="{DataTemplate local:PedidoPage}" />
+
 
     </TabBar>
 
@@ -39,6 +45,9 @@
 
     <FlyoutItem Title="Configuracion" Icon="icon_settings2.png">
         <ShellContent Title="" ContentTemplate="{DataTemplate local:SettingsPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Pedidos" Icon="icon_settings2.png">
+        <ShellContent Title="" ContentTemplate="{DataTemplate local:PedidoPage}" />
     </FlyoutItem>
 
 
