@@ -2,14 +2,51 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoMAUI.Pages.PedidoPage"
-             Title="PedidoPage">
-    <StackLayout Padding="30">
-        <Label Text="Nombre del Producto" />
-        <Entry x:Name="ProductName" Placeholder="Ingrese el nombre" />
+             Title="Pedido"
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="White" />
+            <!-- Cambio a blanco -->
+            <Setter Property="Margin" Value="0,10,0,5" />
+        </Style>
 
-        <Label Text="Descripción del Producto" />
-        <Entry x:Name="ProductDescription" Placeholder="Ingrese la descripción" />
+        <Style TargetType="Entry">
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="PlaceholderColor" Value="#A5A5A5" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
 
-        <Button Text="Guardar Producto" Clicked="OnSaveProductClicked" />
-    </StackLayout>
+        <Style TargetType="Button">
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="BackgroundColor" Value="CadetBlue" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="Margin" Value="0,20" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="30" VerticalOptions="CenterAndExpand">
+            <!-- Título agregado -->
+            <Label Text="INGRESA TU PEDIDO" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="White" 
+                   Margin="0,0,0,20" />
+
+            <!-- Labels con color blanco y estilo ajustado -->
+            <Label Text="Nombre del Producto" />
+            <Entry x:Name="ProductName" Placeholder="Ingrese el nombre del producto" />
+
+            <Label Text="Descripción del Producto" />
+            <                         x:Name="ProductDescription" Placeholder="Ingrese la descripción del producto" />
+
+            <Button Text="Guardar Producto" Clicked="OnSaveProductClicked" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

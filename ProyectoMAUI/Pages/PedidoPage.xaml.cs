@@ -9,7 +9,7 @@ namespace ProyectoMAUI.Pages
 {
     public partial class PedidoPage : ContentPage
     {
-        private const string ApiUrl = "http://localhost:5248/api/product"; // URL de tu API
+        private const string ApiUrl = "http://localhost:5052/api/product"; // URL de tu API
 
         public PedidoPage()
         {
