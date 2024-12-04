@@ -8,6 +8,7 @@ namespace ProyectoMAUI.Pages
     {
         private ObservableCollection<CartItem> _cartItems;
 
+
         public ProductDetailPage(Product product, ObservableCollection<CartItem> cartItems)
         {
             InitializeComponent();

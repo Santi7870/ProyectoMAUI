@@ -19,7 +19,8 @@
                    HorizontalOptions="Center" />
 
             <!-- Lista de productos en el carrito -->
-            <ListView ItemsSource="{Binding CartItems}" 
+            <ListView x:Name="CartListView" 
+                      ItemsSource="{Binding CartItems}" 
                       BackgroundColor="Black">
                 <ListView.ItemTemplate>
                     <DataTemplate>

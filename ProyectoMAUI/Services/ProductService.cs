@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 public class ProductService
 {
     // URL de la API donde se enviarán los datos (actualiza esta URL a la de tu API)
-    private readonly string ApiUrl = "https://mi-api.com/endpoint";
+    private readonly string ApiUrl = "http://localhost:5248/api/product";
 
     // Método para enviar los datos del producto a la API
     public async Task<bool> SendProductDataAsync(string productName, string description)
