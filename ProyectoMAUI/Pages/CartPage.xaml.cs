@@ -13,20 +13,20 @@ namespace ProyectoMAUI.Pages
         private ObservableCollection<CartItem> _cartItems;
 
       
-        // Asegúrate de que CartPage tenga un constructor que acepte un ObservableCollection<CartItem>
+        
         public CartPage(ObservableCollection<CartItem> cartItems)
         {
             InitializeComponent();
 
             // Inicializamos _cartItems con los datos pasados
-            _cartItems = cartItems ?? new ObservableCollection<CartItem>();  // Asegúrate de que _cartItems no sea null
+            _cartItems = cartItems ?? new ObservableCollection<CartItem>();  
 
             // Vincular los cartItems a la interfaz
             CartListView.ItemsSource = _cartItems;
             CartItems = _cartItems;  // Asegúrate de asignar la colección correctamente
         }
 
-        // Constructor vacío para la página del carrito (cuando no se pasa un ObservableCollection<CartItem>)
+        
         public CartPage()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace ProyectoMAUI.Pages
 
         public double CartTotal => CartItems.Sum(item => item.Total); // Total general
 
-        // Constructor de la página del carrito
+     
 
 
         // Cargar el carrito desde el archivo JSON
@@ -65,7 +65,7 @@ namespace ProyectoMAUI.Pages
             }
             catch (Exception ex)
             {
-                // Mostrar un mensaje si hay algún error al cargar el carrito
+                
                 DisplayAlert("Error", "No se pudo cargar el carrito desde el archivo: " + ex.Message, "OK");
             }
         }
@@ -79,7 +79,7 @@ namespace ProyectoMAUI.Pages
 
                 if (item != null)
                 {
-                    // Verificar que CartItems no sea null antes de realizar la eliminación
+                    
                     if (CartItems != null)
                     {
                         CartItems.Remove(item); // Eliminar el artículo de la colección visual
@@ -87,11 +87,11 @@ namespace ProyectoMAUI.Pages
                     }
                     else
                     {
-                        // Mostrar un mensaje si CartItems es null
+                        
                         DisplayAlert("Error", "No se pudo encontrar el carrito.", "OK");
                     }
 
-                    // Asegurarse de que el total se actualice correctamente después de eliminar un artículo
+                    
                     OnPropertyChanged(nameof(CartTotal));
                 }
             }
@@ -184,7 +184,7 @@ namespace ProyectoMAUI.Pages
             }
             catch (Exception ex)
             {
-                // Mostrar un mensaje si hay un error al abrir el Flyout
+                
                 DisplayAlert("Error", "No se pudo abrir el menú: " + ex.Message, "OK");
             }
         }

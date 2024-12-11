@@ -17,7 +17,7 @@ namespace ProyectoMAUI.Services
         public static void AddToCart(CartItem item)
         {
             CartItems.Add(item);
-            SaveCartAsync(); // Guardar el carrito después de añadir un producto
+            SaveCartAsync(); 
         }
 
         // Obtener los productos del carrito
@@ -36,14 +36,14 @@ namespace ProyectoMAUI.Services
         public static void ClearCart()
         {
             CartItems.Clear();
-            SaveCartAsync(); // Guardar después de limpiar el carrito
+            SaveCartAsync(); 
         }
 
         // Eliminar un artículo del carrito
         public static void RemoveItem(CartItem item)
         {
             CartItems.Remove(item);
-            SaveCartAsync(); // Guardar después de eliminar un producto
+            SaveCartAsync(); 
         }
 
         // Guardar el carrito en un archivo JSON

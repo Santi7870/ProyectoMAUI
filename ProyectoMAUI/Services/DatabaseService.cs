@@ -8,14 +8,14 @@ namespace ProyectoMAUI.Services
 {
     public class DatabaseService
     {
-        // Asegúrate de que _database sea de tipo SQLiteAsyncConnection
+        
         readonly SQLiteAsyncConnection _database;
 
         public DatabaseService(string dbPath)
         {
             // Inicializa la conexión a la base de datos
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Usuario>().Wait();  // Asegúrate de que la tabla 'Usuario' esté creada
+            _database.CreateTableAsync<Usuario>().Wait();  
         }
 
         // Método asincrónico para obtener el usuario por correo

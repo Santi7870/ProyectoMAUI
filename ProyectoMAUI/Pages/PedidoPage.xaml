@@ -13,8 +13,8 @@
 
         <Style TargetType="Entry">
             <Setter Property="HeightRequest" Value="40" />
-            <Setter Property="BackgroundColor" Value="Black" />
-            <Setter Property="PlaceholderColor" Value="#A5A5A5" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="PlaceholderColor" Value="White" />
             <Setter Property="Margin" Value="0,5" />
         </Style>
 

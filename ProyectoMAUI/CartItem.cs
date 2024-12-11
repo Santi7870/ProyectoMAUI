@@ -10,10 +10,9 @@ namespace ProyectoMAUI.Models
         public string Name { get; set; }
         public string Size { get; set; }
         public string Color { get; set; }
-        public double Price { get; set; } // Precio del producto
-        public int Quantity { get; set; } // Cantidad en el carrito
-
-        // Total por producto (precio * cantidad)
+        public double Price { get; set; } 
+        public int Quantity { get; set; } 
+     
         public double Total => Price * Quantity;
 
     }

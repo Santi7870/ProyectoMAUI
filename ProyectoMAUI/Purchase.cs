@@ -8,14 +8,14 @@ namespace ProyectoMAUI.Models
 {
     public class Purchase
     {
-        public int Id { get; set; } // ID único para la compra
-        public string BuyerName { get; set; }  // Nombre del comprador
+        public int Id { get; set; } 
+        public string BuyerName { get; set; }  
 
-        public string Name { get; set; } // Nombre del producto
-        public string Color { get; set; } // Color seleccionado
-        public string Size { get; set; } // Talla seleccionada
-        public double Price { get; set; } // Precio
-        public DateTime PurchaseDate { get; set; } // Fecha de la compra
+        public string Name { get; set; } 
+        public string Color { get; set; } 
+        public string Size { get; set; } 
+        public double Price { get; set; } 
+        public DateTime PurchaseDate { get; set; } 
     }
 }
 
