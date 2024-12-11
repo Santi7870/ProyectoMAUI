@@ -8,13 +8,12 @@
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="18" />
             <Setter Property="TextColor" Value="White" />
-            <!-- Cambio a blanco -->
             <Setter Property="Margin" Value="0,10,0,5" />
         </Style>
 
         <Style TargetType="Entry">
             <Setter Property="HeightRequest" Value="40" />
-            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="Black" />
             <Setter Property="PlaceholderColor" Value="#A5A5A5" />
             <Setter Property="Margin" Value="0,5" />
         </Style>
@@ -44,9 +43,10 @@
             <Entry x:Name="ProductName" Placeholder="Ingrese el nombre del producto" />
 
             <Label Text="Descripción del Producto" />
-            <                         x:Name="ProductDescription" Placeholder="Ingrese la descripción del producto" />
+            <Entry x:Name="ProductDescription" Placeholder="Ingrese la descripción del producto" />
 
             <Button Text="Guardar Producto" Clicked="OnSaveProductClicked" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
+
