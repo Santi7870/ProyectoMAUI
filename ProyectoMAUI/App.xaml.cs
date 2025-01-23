@@ -26,6 +26,15 @@ namespace ProyectoMAUI
         public App()
         {
             InitializeComponent();
+            MainPage = new SplashPage(); // Mostrar la página de carga al inicio
+
+            // Iniciar la carga de la página principal
+            LoadMainPageAsync();
+        }
+
+        private async void LoadMainPageAsync()
+        {
+            await Task.Delay(3000); // Simular un retraso para la página de carga
 
             // Verificar si el usuario ya ha iniciado sesión
             var userLoggedIn = UserService.CurrentUser != null;
