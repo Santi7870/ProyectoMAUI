@@ -1,14 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoMAUI.Pages.WelcomePage"
              BackgroundColor="Black">
     <Grid RowDefinitions="*, Auto" Padding="0">
         <!-- Imagen de fondo -->
-        <Image Source="image4.jpg" Aspect="AspectFill" Grid.Row="0" Opacity="0.2" />
+        <Image Source="tela.jpg" Aspect="AspectFill" Grid.Row="0"  />
 
         <!-- Panel inferior fijo -->
-        <StackLayout Grid.Row="1" BackgroundColor="Black" Padding="20" Spacing="10">
-            <Label Text="¡Bienvenido a FashionApp!" 
+        <StackLayout Grid.Row="1" BackgroundColor="Black" Padding="20" Spacing="5">
+            <Label Text="¡Bienvenido a Kalahari Dress!" 
                    FontSize="24" 
                    HorizontalTextAlignment="Center" 
                    TextColor="White" 
@@ -17,23 +18,28 @@
                    FontSize="16" 
                    HorizontalTextAlignment="Center" 
                    TextColor="#CCCCCC" />
-            <Button Text="Registrarse" 
+
+            <Button x:Name="RegisterButton"
+                    Text="Registrarse" 
                     FontSize="18" 
                     BackgroundColor="#FF4500" 
                     TextColor="Black" 
                     CornerRadius="25" 
-                    HeightRequest="50" 
-                    Clicked="OnRegisterClicked" />
-            <Button Text="Iniciar Sesión" 
+                    HeightRequest="30" 
+                    Clicked="OnRegisterClicked"
+                    Pressed="OnRegisterButtonPressed"
+                    Released="OnRegisterButtonReleased" />
+
+            <Button x:Name="LoginButton"
+                    Text="Iniciar Sesión" 
                     FontSize="18" 
                     BackgroundColor="#1E90FF" 
                     TextColor="Black" 
                     CornerRadius="25" 
-                    HeightRequest="50" 
-                    Clicked="OnLoginClicked" />
+                    HeightRequest="30" 
+                    Clicked="OnLoginClicked"
+                    Pressed="OnLoginButtonPressed"
+                    Released="OnLoginButtonReleased" />
         </StackLayout>
     </Grid>
 </ContentPage>
-
-
-
