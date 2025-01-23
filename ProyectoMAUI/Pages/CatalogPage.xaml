@@ -2,94 +2,46 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ProyectoMAUI.Models"
+             xmlns:viewModels="clr-namespace:ProyectoMAUI.ViewModels"
              x:Class="ProyectoMAUI.Pages.CatalogPage"
-             
              Title="Catálogo"
              BackgroundColor="{DynamicResource BackgroundColor}">
 
-    <!-- El botón en la parte superior izquierda para abrir el menú -->
+    <ContentPage.BindingContext>
+        <viewModels:CatalogPageViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Abrir Menú" IconImageSource="menu_icon.png" Clicked="OnOpenFlyoutClicked" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
         <VerticalStackLayout Padding="10" Spacing="30">
-            <!-- Sección de Hoodies -->
             <Label Text="Hoodies" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
-            <!-- Carousel para Hoodies -->
-            <CarouselView Loop="True" HeightRequest="400" ItemTemplate="{StaticResource ProductTemplate}">
-                <CarouselView.ItemsSource>
-                    <x:Array Type="{x:Type local:Product}">
-                        <local:Product Name="Hoodie de Algodón" ImageSource="hoodie1.jpg" Description="Un hoodie suave y cómodo hecho de algodón puro." />
-                        <local:Product Name="Hoodie Casual" ImageSource="hoodie2.jpg" Description="Perfecto para salidas casuales y relajadas." />
-                        <local:Product Name="Hoodie Deportivo" ImageSource="hoodie3.jpg" Description="Diseñado para acompañarte durante tus entrenamientos." />
-                        <local:Product Name="Hoodie Elegante" ImageSource="hoodie4.jpg" Description="Un hoodie ideal para ocasiones semi-formales." />
-                        <local:Product Name="Hoodie Oversized" ImageSource="hoodie5.jpg" Description="Ajuste holgado para un estilo moderno y relajado." />
-                        <local:Product Name="Hoodie Clásico" ImageSource="hoodie6.jpg" Description="Un diseño clásico que nunca pasa de moda." />
-                    </x:Array>
-                </CarouselView.ItemsSource>
-            </CarouselView>
+            <CarouselView Loop="True" HeightRequest="400" ItemTemplate="{StaticResource ProductTemplate}" ItemsSource="{Binding Hoodies}" />
 
-            <!-- Sección de Zapatos -->
             <Label Text="Zapatos" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
-            <!-- Carousel para Zapatos -->
-            <CarouselView Loop="True" HeightRequest="400" ItemTemplate="{StaticResource ProductTemplate}">
-                <CarouselView.ItemsSource>
-                    <x:Array Type="{x:Type local:Product}">
-                        <local:Product Name="Zapatos Clásicos" ImageSource="shoes1.jpg" Description="Elegancia y tradición en un diseño atemporal." />
-                        <local:Product Name="Zapatos Deportivos" ImageSource="shoes2.jpg" Description="Comodidad y soporte para actividades físicas." />
-                        <local:Product Name="Zapatos Casual" ImageSource="shoes3.jpg" Description="Versátiles para cualquier ocasión informal." />
-                        <local:Product Name="Zapatos de Cuero" ImageSource="shoes4.jpg" Description="Confeccionados con cuero de alta calidad." />
-                        <local:Product Name="Botines Elegantes" ImageSource="shoes5.jpg" Description="Estilo y sofisticación en cada paso." />
-                        <local:Product Name="Zapatillas Modernas" ImageSource="shoes6.png" Description="Diseño innovador y materiales de última generación." />
-                    </x:Array>
-                </CarouselView.ItemsSource>
-            </CarouselView>
+            <CarouselView Loop="True" HeightRequest="400" ItemTemplate="{StaticResource ProductTemplate}" ItemsSource="{Binding Shoes}" />
 
-            <!-- Sección de Camisetas -->
             <Label Text="Camisetas" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
 
-            <!-- Carousel para Camisetas -->
-            <CarouselView Loop="True" HeightRequest="400" ItemTemplate="{StaticResource ProductTemplate}">
-                <CarouselView.ItemsSource>
-                    <x:Array Type="{x:Type local:Product}">
-                        <local:Product Name="Camiseta Básica" ImageSource="shirt1.jpg" Description="El básico perfecto para cualquier guardarropa." />
-                        <local:Product Name="Camiseta Estampada" ImageSource="shirt2.jpg" Description="Destaca con diseños únicos y vibrantes." />
-                        <local:Product Name="Camiseta Deportiva" ImageSource="shirt3.jpg" Description="Ligera y transpirable para tu rutina deportiva." />
-                        <local:Product Name="Camiseta Oversized" ImageSource="shirt4.jpg" Description="Ajuste relajado para un look contemporáneo." />
-                        <local:Product Name="Camiseta Casual" ImageSource="shirt5.jpg" Description="Perfecta para salidas y días informales." />
-                        <local:Product Name="Camiseta Elegante" ImageSource="shirt6.jpg" Description="Estilo y confort en un diseño refinado." />
-                    </x:Array>
-                </CarouselView.ItemsSource>
-            </CarouselView>
+            <CarouselView Loop="True" HeightRequest="400" ItemTemplate="{StaticResource ProductTemplate}" ItemsSource="{Binding Shirts}" />
         </VerticalStackLayout>
     </ScrollView>
 
-    <!-- Plantilla para los productos -->
     <ContentPage.Resources>
         <DataTemplate x:Key="ProductTemplate">
             <StackLayout Padding="10" Spacing="10">
-                <!-- Título de Producto -->
                 <Label Text="{Binding Name}" TextColor="White" FontSize="18" HorizontalOptions="Center" />
-
-                <!-- Imagen de Producto -->
                 <Image Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" />
-
-                <!-- Descripción del Producto -->
                 <Label Text="{Binding Description}" TextColor="Gray" FontSize="14" HorizontalOptions="Center" />
-
-
-                <!-- Botón Comprar -->
                 <Button Text="Comprar" BackgroundColor="Red" TextColor="White" WidthRequest="100" HorizontalOptions="Center" Clicked="OnProductBuyClicked" />
             </StackLayout>
         </DataTemplate>
     </ContentPage.Resources>
-
-
 </ContentPage>
-
 
 
 
